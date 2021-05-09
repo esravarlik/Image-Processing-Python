@@ -11,8 +11,8 @@ while True:
     kernel = np.ones((5, 5), np.uint8)
     dilation = cv2.dilate(mask, kernel, iterations=3)
     erosion = cv2.erode(mask, kernel, iterations=3)
-    opening = cv2.morphologyEx(mask, cv2.MORPH_OPEN, kernel)
-    closing = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, kernel)
+    opening = cv2.morphologyEx(mask, cv2.MORPH_OPEN, kernel) #Erosion + Dilation ok.
+    closing = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, kernel) #Dilation + Erosion
 
     cv2.imshow("Image", frame)
     cv2.imshow("Mask", mask)
